@@ -16,15 +16,15 @@ public class Bar {
     
     private final Foo foo;
 
-    public String getStr() {
-        return str;
-    }
+    
 
     private final String str;
 
-    public Foo getFoo() {
-        return foo;
-    }
+    
 
-   
+    public void display(){
+        System.out.println("**********************************");
+        System.out.println(foo.getId() + " " + str);
+        System.out.println("**********************************"); 
+    }
 }

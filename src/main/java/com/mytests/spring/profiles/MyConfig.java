@@ -25,32 +25,32 @@ public class MyConfig {
     @Bean  @Profile("p1")
     public Foo foo1() {
         
-        return new Foo("p1");
+        return new Foo("p1foo");
     }
     @Bean  @Profile("p2")
     public Foo foo2() {
         
-        return new Foo("p2");
+        return new Foo("p2foo");
     }
 
-    @Bean @Profile("p1")
+    @Bean @Profile("p11")
     String foo_string() {
         
         return "p1str";
     }
-    @Bean @Profile("p2")
+    @Bean @Profile("p21")
     String default_string() {
         
         return "p2str";
     }
     
-    @Bean @Profile("p1")
+    @Bean @Profile("p111")
     DataSource ds1(){
         
         
         return new MysqlDataSource();
      }
-    @Bean @Profile("p2")
+    @Bean @Profile("p211")
     DataSource ds2(){
         
         

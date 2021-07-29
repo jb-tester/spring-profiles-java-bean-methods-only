@@ -13,10 +13,11 @@ import org.springframework.context.support.GenericApplicationContext;
 public class RunMe {
     public static void main(String[] args) {
         final AnnotationConfigApplicationContext appContext =  new AnnotationConfigApplicationContext();
-        appContext.getEnvironment().setActiveProfiles( "p1" );
+        appContext.getEnvironment().setActiveProfiles( "p1","p11","p111" );
         appContext.register( MyConfig.class );
         appContext.refresh();
         Bar bar  = appContext.getBean(Bar.class);
+        bar.display();
     }
 
 }
