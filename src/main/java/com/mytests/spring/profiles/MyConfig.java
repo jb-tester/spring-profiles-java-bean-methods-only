@@ -16,12 +16,12 @@ import javax.sql.DataSource;
  */
 @Configuration
 public class MyConfig {
+
     @Bean
-    public Bar bar(Foo foo, String s, DataSource ds) {
-        
+    public Bar bar(Foo foo, Boo boo, String s, DataSource ds) {
         return new Bar(foo, s);
     }
-    
+    //// public project class type beans ////
     @Bean  @Profile("p1")
     public Foo foo1() {
         
@@ -32,28 +32,36 @@ public class MyConfig {
         
         return new Foo("p2foo");
     }
-
-    @Bean @Profile("p11")
-    String foo_string() {
-        
-        return "p1str";
+    
+    //// non-public project class type beans ////
+    @Bean @Profile("p3")
+    Boo fooBean() {
+        return new Boo("p1");
     }
-    @Bean @Profile("p21")
-    String default_string() {
-        
-        return "p2str";
+    @Bean @Profile("p4")
+    Boo defaultBean() {
+        return new Boo("p2");
     }
     
-    @Bean @Profile("p111")
-    DataSource ds1(){
-        
-        
+    //// public non-project class type beans ////
+    @Bean @Profile("p5")
+    public DataSource ds1(){
         return new MysqlDataSource();
      }
-    @Bean @Profile("p211")
-    DataSource ds2(){
-        
-        
+    @Bean @Profile("p6")
+    public DataSource ds2(){
         return new MysqlDataSource();
+    }
+    
+    //// non-public non-project class type beans ////
+    @Bean @Profile("p7")
+    String foo_string() {
+
+        return "p1str";
+    }
+    @Bean @Profile("p8")
+    String default_string() {
+
+        return "p2str";
     }
 }
