@@ -35,12 +35,12 @@ public class MyConfig {
     
     //// non-public project class type beans ////
     @Bean @Profile("p3")
-    Boo fooBean() {
-        return new Boo("p1");
+    Boo booBean1() {
+        return new Boo("p3boo");
     }
     @Bean @Profile("p4")
-    Boo defaultBean() {
-        return new Boo("p2");
+    Boo booBean2() {
+        return new Boo("p4boo");
     }
     
     //// public non-project class type beans ////
