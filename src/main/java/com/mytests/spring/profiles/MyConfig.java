@@ -18,7 +18,7 @@ import javax.sql.DataSource;
 public class MyConfig {
 
     @Bean
-    public Bar bar(Foo foo, Boo boo, String s, DataSource ds) {
+    public Bar bar(Foo foo, Boo boo, DataSource ds, String s) {
         return new Bar(foo, s);
     }
     //// public project class type beans ////
